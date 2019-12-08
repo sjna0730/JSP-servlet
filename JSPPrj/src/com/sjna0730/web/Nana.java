@@ -17,7 +17,11 @@ public class Nana extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		
 		PrintWriter out = response.getWriter();
-		int cnt = Integer.parseInt(request.getParameter("cnt"));
+		
+		String cnt_ = request.getParameter("cnt"); //cnt_라는 임시변수를 만들고 클라이언트가 어떤값을 주는지에 따라 달라진다.
+		int cnt = 100; //기본값 100
+		if(cnt_ != null && !cnt_.equals("")) //만약 전달받는 값이 null이 아니면서 "" 빈 문자열이 아닌경우
+			cnt = Integer.parseInt(cnt_); //cnt_에 값을 받아온다.
 		
 		for(int i=0; i<cnt; i++)
 			out.println((i+1)+": 안녕 ~servlet<br>");
