@@ -17,8 +17,9 @@ public class Nana extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		
 		PrintWriter out = response.getWriter();
+		int cnt = Integer.parseInt(request.getParameter("cnt"));
 		
-		for(int i=0; i<100; i++)
+		for(int i=0; i<cnt; i++)
 			out.println((i+1)+": ¾È³ç ~servlet<br>");
 		
 	}
