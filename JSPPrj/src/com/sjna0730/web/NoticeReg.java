@@ -15,7 +15,7 @@ public class NoticeReg extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		
+				
 		PrintWriter out = response.getWriter();
 		
 		String title = request.getParameter("title"); //reg.html에 title에 해당하는것을 받아온다.
